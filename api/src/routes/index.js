@@ -1,7 +1,3 @@
-const axios = require("axios");
-const apiUrl = `https://api.rawg.io/api/games?key=${DB_API_KEY}`;
-const { DB_API_KEY } = process.env;
-
 const { Router } = require("express");
 const router = Router();
 
@@ -17,10 +13,10 @@ const { getPlatforms } = require("../controllers/platforms");
 //const VideogameRoutes = require("./videogames_route");
 //const GenreRoutes = require("./genres_route");
 
-router.get("/videogames", getVideogames);
+router.get("/videogames", getVideogames); //no
 router.get("/genres", getGenres);
 router.get("/platforms", getPlatforms);
 router.get("/videogames/:id", videogamesByID);
-router.get("/videogame", postVideogames);
+router.get("/videogame", postVideogames); //no
 
 module.exports = router;
