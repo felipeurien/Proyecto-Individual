@@ -1,4 +1,6 @@
+const { Router } = require("express");
 const { Videogame, Genre } = require("../db");
+//const router = Router();
 
 async function postVideogames(req, res) {
   try {
@@ -12,7 +14,7 @@ async function postVideogames(req, res) {
       genre,
       img,
     } = req.body;
-
+    console.log(req.body);
     let videogameCreated = await Videogame.create({
       name,
       description,

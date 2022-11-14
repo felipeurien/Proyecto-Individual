@@ -30,7 +30,7 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
     },
 
-    platform: {
+    platforms: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
     },

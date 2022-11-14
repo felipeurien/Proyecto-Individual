@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { DB_API_KEY } = process.env;
+const { DB_API_KEY } = process.env; // no funciona con esto xD
 const { Videogame, Genre } = require("../db");
 
 const getApiInfo = async () => {
@@ -7,7 +7,7 @@ const getApiInfo = async () => {
 
   for (let i = 1; i <= 5; i++) {
     const apiUrl = await axios.get(
-      `https://api.rawg.io/api/games?key=${DB_API_KEY}&page=${i}`
+      `https://api.rawg.io/api/games?key=${process.env.DB_API_KEY}&page=${i}`
     );
     apiUrl.data.results.map((v) => {
       games.push({

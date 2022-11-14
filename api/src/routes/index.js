@@ -13,10 +13,10 @@ const { getPlatforms } = require("../controllers/platforms");
 //const VideogameRoutes = require("./videogames_route");
 //const GenreRoutes = require("./genres_route");
 
-router.get("/videogames", getVideogames); //no
+router.get("/videogames", getVideogames);
 router.get("/genres", getGenres);
 router.get("/platforms", getPlatforms);
 router.get("/videogames/:id", videogamesByID);
-router.get("/videogame", postVideogames); //no
+router.post("/videogame", postVideogames); //no
 
 module.exports = router;
