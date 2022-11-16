@@ -1,3 +1,4 @@
+// FALTA TERMINAR ---> LOS FILTERS ABC, RATING, GAMES
 const initialState = {
   videogames: [],
   allVideogames: [],

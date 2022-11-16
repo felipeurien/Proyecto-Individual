@@ -50,4 +50,34 @@ export default function Home () {
         dispatch(filterGames(e.target.value))
     }
     
+    return(
+        <div className='home'>
+            <button className='button_0' onClick={e => {handleClick(e)}}></button>
+
+            <SearchBar className = "searchBar"/>
+            
+            <div className='filters'>
+
+                <select className='button_1' onChange={ e => handleSortNames(e)}>
+
+                </select>
+
+                <select className='button_2' onChange={ e => handleSortRatings(e)}>
+                    
+                </select>
+
+                <select className='button_3' onChange={ e => handleFilterGames(e)}>
+                    
+                </select>
+
+            </div> 
+            
+            <div className='cards_grid'></div>
+
+            <div className='Paginado'></div>
+
+            <Link to = '/videogame'></Link>
+
+        </div>
+    )
 }
