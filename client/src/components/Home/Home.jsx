@@ -4,11 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { filterByAbc, filterByRating, getVideogames, filterGames } from '../../actions';
 import { Link  } from 'react-router-dom';
 import Card from '../Card/Card';
-import "./home.css"
+import "./Home.css"
 import Paginado from "../Paginado/Paginado";
 import SearchBar from "../SearchBar/SearchBar";
 
 export default function Home () {
+    
     const dispatch = useDispatch();
     const allVideogames = useSelector((state) => state.videogames)
     const [ order, setOrder ] = useState("")
@@ -59,24 +60,60 @@ export default function Home () {
             <div className='filters'>
 
                 <select className='button_1' onChange={ e => handleSortNames(e)}>
-
+                    <option value="" disabled selected>By Name</option>
+                    <option value='A-Z'>A-Z</option>
+                    <option value='Z-A'>Z-A</option>
                 </select>
 
                 <select className='button_2' onChange={ e => handleSortRatings(e)}>
-                    
+                    <option value="" disabled selected>By Rating</option>
+                    <option value='asc'>Ascendente</option>
+                    <option value='desc'>Descendente</option>
                 </select>
 
                 <select className='button_3' onChange={ e => handleFilterGames(e)}>
-                    
+                    <option value="" disabled selected>Filter Games</option>
+                    <option value='all'>All Videogames</option>
+                    <option value='created'>Creados</option>
+                    <option value='api'>Por Api</option>
                 </select>
 
             </div> 
             
-            <div className='cards_grid'></div>
+            <div className='cards_grid'>
+                {
+                    vgPaginaActual?.map((v, id) => {
+                        return(
+                            <div className="cards" >
+                                <Link key={id} to={ `/videogames/${v.id}`}>
+                                    <button className="btn_cards">
+                                        <Card
+                                        name={v.name}
+                                        image={v.img} 
+                                        genres={v.genres} 
+                                        rating={v.rating} 
+                                        released={v.released}
+                                        />
+                                    </button>
+                                </Link>
+                            </div>
+                        )
+                        
+                    })
+                }
+            </div>
 
-            <div className='Paginado'></div>
+            <div className='Paginado'>
+            <Paginado
+                vgPorPagina={vgPorPagina}
+                allVideogames={allVideogames.length}
+                paginado={paginado}
+                />
+            </div>
 
-            <Link to = '/videogame'></Link>
+            <Link to = '/videogame'>
+                <button className='create'>Create Videogame</button>
+            </Link>
 
         </div>
     )
