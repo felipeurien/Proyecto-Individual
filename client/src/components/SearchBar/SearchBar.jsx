@@ -25,7 +25,7 @@ export default function SearchBar () {
             <input
             className="input_bar"
             type="text"
-            placeholder="Search"
+            placeholder="Insert Videogame"
             onChange={(e) => handleInput(e)}
             />
             <button className="btn_bar" type="submit" onClick={(e) => handleSubmit(e)}>Search</button>

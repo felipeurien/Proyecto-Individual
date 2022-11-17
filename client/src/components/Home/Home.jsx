@@ -9,12 +9,12 @@ import Paginado from "../Paginado/Paginado";
 import SearchBar from "../SearchBar/SearchBar";
 
 export default function Home () {
-    
+
     const dispatch = useDispatch();
     const allVideogames = useSelector((state) => state.videogames)
-    const [ order, setOrder ] = useState("")
+    const [ setOrder ] = useState("")
     const [ paginaActual, setPaginaActual ] = useState(1)
-    const [ vgPorPagina, setPgPorPagina ] = useState(15)
+    const [ vgPorPagina ] = useState(15)
     const indexLast = paginaActual * vgPorPagina
     const indexFirst = indexLast - vgPorPagina
     const vgPaginaActual = allVideogames.slice(indexFirst, indexLast)
@@ -67,15 +67,15 @@ export default function Home () {
 
                 <select className='button_2' onChange={ e => handleSortRatings(e)}>
                     <option value="" disabled selected>By Rating</option>
-                    <option value='asc'>Ascendente</option>
-                    <option value='desc'>Descendente</option>
+                    <option value='asc'>Ascending</option>
+                    <option value='desc'>Descending</option>
                 </select>
 
                 <select className='button_3' onChange={ e => handleFilterGames(e)}>
                     <option value="" disabled selected>Filter Games</option>
                     <option value='all'>All Videogames</option>
-                    <option value='created'>Creados</option>
-                    <option value='api'>Por Api</option>
+                    <option value='created'>Created</option>
+                    <option value='api'>Api</option>
                 </select>
 
             </div> 
