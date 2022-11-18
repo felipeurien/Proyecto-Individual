@@ -12,9 +12,9 @@ export default function Home () {
 
     const dispatch = useDispatch();
     const allVideogames = useSelector((state) => state.videogames)
-    const [ setOrder ] = useState("")
+    const [ order, setOrder ] = useState("")
     const [ paginaActual, setPaginaActual ] = useState(1)
-    const [ vgPorPagina ] = useState(15)
+    const [ vgPorPagina, setPgPorPagina ] = useState(15)
     const indexLast = paginaActual * vgPorPagina
     const indexFirst = indexLast - vgPorPagina
     const vgPaginaActual = allVideogames.slice(indexFirst, indexLast)
@@ -49,29 +49,30 @@ export default function Home () {
     function handleFilterGames(e){
         e.preventDefault()
         dispatch(filterGames(e.target.value))
+        setOrder("")
     }
     
     return(
-        <div className='home'>
-            <button className='button_0' onClick={e => {handleClick(e)}}></button>
+        <div>
+            <button onClick={e => {handleClick(e)}}></button>
 
             <SearchBar className = "searchBar"/>
             
-            <div className='filters'>
+            <div>
 
-                <select className='button_1' onChange={ e => handleSortNames(e)}>
+                <select onChange={ e => handleSortNames(e)}>
                     <option value="" disabled selected>By Name</option>
                     <option value='A-Z'>A-Z</option>
                     <option value='Z-A'>Z-A</option>
                 </select>
 
-                <select className='button_2' onChange={ e => handleSortRatings(e)}>
+                <select onChange={ e => handleSortRatings(e)}>
                     <option value="" disabled selected>By Rating</option>
                     <option value='asc'>Ascending</option>
                     <option value='desc'>Descending</option>
                 </select>
 
-                <select className='button_3' onChange={ e => handleFilterGames(e)}>
+                <select onChange={ e => handleFilterGames(e)}>
                     <option value="" disabled selected>Filter Games</option>
                     <option value='all'>All Videogames</option>
                     <option value='created'>Created</option>
@@ -79,12 +80,12 @@ export default function Home () {
                 </select>
 
             </div> 
-            
-            <div className='cards_grid'>
+           {/*  NO ESTARIA RENDERIZANDO LAS CARDS */}
+            <div>
                 {
                     vgPaginaActual?.map((v, id) => {
                         return(
-                            <div className="cards" >
+                            <div>
                                 <Link key={id} to={ `/videogames/${v.id}`}>
                                     <button className="btn_cards">
                                         <Card
@@ -103,7 +104,7 @@ export default function Home () {
                 }
             </div>
 
-            <div className='Paginado'>
+            <div>
             <Paginado
                 vgPorPagina={vgPorPagina}
                 allVideogames={allVideogames.length}
@@ -112,7 +113,7 @@ export default function Home () {
             </div>
 
             <Link to = '/videogame'>
-                <button className='create'>Create Videogame</button>
+                <button>Create Videogame</button>
             </Link>
 
         </div>
