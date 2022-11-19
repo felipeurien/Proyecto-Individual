@@ -95,7 +95,7 @@ export default function VideogameCreate(){
         }
     }
         
-        function handleSelectPlatforms(e){
+        /* function handleSelectPlatforms(e){
             setInput({
                 ...input,
                 platforms: [...input.platforms, e.target.value]
@@ -105,6 +105,24 @@ export default function VideogameCreate(){
                 platforms: [...input.platforms, e.target.value]
             })
             )
+        } */
+
+        function handleSelectPlatforms(e){
+            if (!input.platforms.includes(e.target.value)) {
+                setInput({
+                    ...input,
+                    platforms: [...input.platforms, e.target.value]
+                })
+                setErrors(validate({
+                    ...input,
+                    platforms: [...input.platforms, e.target.value]
+                }))
+            } else {
+                setInput({
+                    ...input
+                })
+            }
+            
         }
 
         function handleDeleteGenres(e){
@@ -278,6 +296,8 @@ export default function VideogameCreate(){
                 {/* PLATFORM */}
                 {/* CREATE PLATFORM */}
                 <div>
+
+                <div>
                     <select onChange={(e) => handleSelectPlatforms(e)}>
                         <option>Platforms</option>
                         {platforms?.map((e) => {
@@ -291,8 +311,8 @@ export default function VideogameCreate(){
                     {
                         errors.platforms && (
                             <span>{errors.platforms}</span>
-                        )
-                    }
+                            )
+                        }
                 </div>
                 {/* DELETE PLATFORM */}
                 <div>
@@ -308,6 +328,8 @@ export default function VideogameCreate(){
                             )
                         })
                     }
+                </div>
+                
                 </div>
 
                 
