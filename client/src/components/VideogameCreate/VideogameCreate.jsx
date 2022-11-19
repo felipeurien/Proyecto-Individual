@@ -106,6 +106,13 @@ export default function VideogameCreate(){
             })
             )
         }
+
+        function handleDeleteGenres(e){
+            setInput({
+                ...input,
+                genre: input.genre.filter((param) => param !== e)
+            })
+        }
     
         function handleDeletePlatforms(e){
             setInput({
