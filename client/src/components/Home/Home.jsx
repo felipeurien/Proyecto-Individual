@@ -80,14 +80,13 @@ export default function Home () {
                 </select>
 
             </div> 
-           {/*  NO ESTARIA RENDERIZANDO LAS CARDS */}
-            <div>
+
+            <div className='card_container'>
                 {
                     vgPaginaActual?.map((v, id) => {
                         return(
                             <div>
-                                <Link key={id} to={ `/videogames/${v.id}`}>
-                                    <button className="btn_cards">
+                                <Link className='linkeru' key={id} to={ `/videogames/${v.id}`}>
                                         <Card
                                         name={v.name}
                                         image={v.img} 
@@ -95,7 +94,6 @@ export default function Home () {
                                         rating={v.rating} 
                                         released={v.released}
                                         />
-                                    </button>
                                 </Link>
                             </div>
                         )

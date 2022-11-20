@@ -5,12 +5,11 @@ export default function Card({ name, image, genres, rating, released}){
 
 
     return(
-        <div>
-            <div>
-                <div>
-                    <img src= { image } alt="Img Not Found" width="200px" height="250px" />
+            <div className="card">
+                <div className="image_container">
+                    <img className='img' src= { image } alt="Img Not Found" width="200px" height="250px" />
                 </div>
-                <div className="flip_card_back">
+                <div>
                     <h1>{ name }</h1>
                     <p>Rating: { rating ? rating : "Not Available"}</p>
                     <p>Released: { released }</p>
@@ -22,9 +21,5 @@ export default function Card({ name, image, genres, rating, released}){
                 </div>
                 
             </div>
-            
-            
-        
-        </div>
     )
 }
