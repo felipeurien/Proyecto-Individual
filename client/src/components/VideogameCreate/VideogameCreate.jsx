@@ -140,6 +140,7 @@ export default function VideogameCreate(){
         }
     
         function handleSubmit(e){
+            console.log(input)
             e.preventDefault()
             let crear = {
                 name: input.name,

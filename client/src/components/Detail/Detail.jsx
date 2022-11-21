@@ -17,14 +17,19 @@ export default function Details(props) {
     const myGame = useSelector((state) => state.detail)
     console.log(myGame[0])
     return (
-        <div className="detail_container">
+        <div>
             {
                 myGame.length > 0 ?
-                <div> 
-                    <Link to= '/home'><button>Home</button></Link>
-                    <div>
+                <div className="div_afuera"> 
+                    <Link to= '/home' className='linkeru' >
+                        <div className="twerk">
+                            <div className="boton"></div>
+                            <div className="boton_home">Home</div>
+                        </div>
+                    </Link>
+                    <div className="detail_container">
                         <h3>{myGame[0].name}</h3>
-                        <img src={myGame[0].img} alt='Img not found'/>
+                        <img className='detail_img' src={myGame[0].img} alt='Img not found'/>
                         <p>{myGame[0].description}</p>
                         <p>{myGame[0].released}</p>
                         <p>{myGame[0].rating}</p>

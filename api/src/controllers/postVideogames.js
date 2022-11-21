@@ -10,7 +10,7 @@ async function postVideogames(req, res) {
       released,
       rating,
       platforms,
-      createdInDB,
+      createdInDb,
       genre,
       img,
     } = req.body;
@@ -21,7 +21,7 @@ async function postVideogames(req, res) {
       released,
       rating,
       platforms,
-      createdInDB,
+      createdInDb,
       img,
     });
 

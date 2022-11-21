@@ -1,0 +1,47 @@
+.detail_img{
+    object-fit: cover;
+    height: 50%;
+    width: 50%;
+    border-radius: 15px;
+    
+}
+
+.detail_container{
+    margin-top: 15px;
+    background-color: darkgrey;
+    border-radius: 10px;
+    padding: 15px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div_afuera{
+    padding: 15px;
+    
+}
+
+.boton{
+    background-image: url(amogu.jpg);
+    background-size: 50px;
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+.boton:hover {
+    background-image: url(https://c.tenor.com/AGZfFB3I_TYAAAAC/among-us-twerk.gif);
+    background-size: 50px;
+}
+
+.twerk{
+    margin-top: 15px;
+    background-color: darkgrey;
+    border-radius: 10px;
+    padding: 15px;
+    width:max-content ;
+    margin-left: auto;
+    margin-right: auto;
+}

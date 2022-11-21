@@ -4,10 +4,10 @@ import "./LandingPage.css"
 
 export default function LandingPage(){
     return(
-        <div>
-            <h1>Welcome 🗿</h1>
+        <div className='background'>
+            <h1>Videogames</h1>
             <Link to = '/home'>
-                <button>entra perra loca</button>
+                <button>Enter</button>
             </Link>
             {/* <img src='https://c.tenor.com/Jlt4lQU4M8kAAAAd/rock-the-rock.gif'/> */}
         </div>

@@ -32,7 +32,7 @@ export function getPlatforms() {
 
 export function postVideogame(payload) {
   return async function (dispatch) {
-    var json = await axios.post("http://localhost:3001/videogame/", payload);
+    var json = await axios.post("http://localhost:3001/videogame", payload);
     return dispatch({
       type: "POST_VIDEOGAME",
       payload: json.data,

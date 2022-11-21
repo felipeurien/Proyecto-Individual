@@ -6,9 +6,9 @@ const router = Router();
 
 const { getVideogames } = require("../controllers/getVgInfo");
 const { getGenres } = require("../controllers/genre");
+const { getPlatforms } = require("../controllers/platforms");
 const { videogamesByID } = require("../controllers/idVideogames");
 const { postVideogames } = require("../controllers/postVideogames");
-const { getPlatforms } = require("../controllers/platforms");
 
 //const VideogameRoutes = require("./videogames_route");
 //const GenreRoutes = require("./genres_route");
