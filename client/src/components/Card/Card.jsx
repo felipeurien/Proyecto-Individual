@@ -10,7 +10,7 @@ export default function Card({ name, image, genres, rating, released}){
                     <img className='img' src= { image } alt="Img Not Found" width="200px" height="250px" />
                 </div>
                 <div>
-                    <h1>{ name }</h1>
+                    <h2>{ name }</h2>
                     <p>Rating: { rating ? rating : "Not Available"}</p>
                     <p>Released: { released }</p>
                     <p>{ genres.map((genres) => { if(!genres.name) { 

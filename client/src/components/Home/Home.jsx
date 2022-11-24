@@ -80,6 +80,10 @@ export default function Home () {
                 </select>
 
             </div> 
+           
+            {
+                allVideogames.length === 0 ? <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>:null
+            }
 
             <div className='card_container'>
                 {

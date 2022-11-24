@@ -4,12 +4,21 @@ import "./LandingPage.css"
 
 export default function LandingPage(){
     return(
-        <div className='background'>
-            <h1>Videogames</h1>
-            <Link to = '/home'>
-                <button>Enter</button>
-            </Link>
-            {/* <img src='https://c.tenor.com/Jlt4lQU4M8kAAAAd/rock-the-rock.gif'/> */}
+        <div className='background_landing'>
+            <div className=''>
+                <div class="container">
+                    <div class="neon">VIDEO </div>
+                    <div class="flux">GAMES </div>
+                </div>
+                <Link to = '/home'>
+                    <div id="outer">
+                    <div class="button_slide slide_down">ENTER</div>
+                    <br /> <br /><br />
+                    
+                    </div>
+                </Link>
+            </div>
         </div>
     )
 }
+

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom';
 import { postVideogame, getGenres, getPlatforms } from '../../actions/index';
 import { useDispatch, useSelector } from "react-redux";
+import "./VideogameCreate.css"
 
 function validate(input) {
     let errors = {}
@@ -171,9 +172,14 @@ export default function VideogameCreate(){
 
     return (
         <div>
-            <Link to= '/home'><button></button></Link>
-            <form onSubmit={(e) => handleSubmit(e)}>
-            <div>
+            <Link className="linkeru" to= '/home'>
+                        <div className="twerk">
+                            <div className="boton"></div>
+                            <div className="boton_home">Home</div>
+                        </div>
+            </Link>
+            <form className='create' onSubmit={(e) => handleSubmit(e)}>
+            <div className='create'>
 
                 {/* NAME */}
                 <div>
