@@ -54,7 +54,7 @@ export default function Home () {
     
     return(
         <div>
-            <button onClick={e => {handleClick(e)}}></button>
+            {/* <button onClick={e => {handleClick(e)}}></button> */}
 
             <SearchBar className = "searchBar"/>
             
